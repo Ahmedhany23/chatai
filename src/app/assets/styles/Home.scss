@@ -1,0 +1,110 @@
+.main-chat {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+  .main-text{
+    position: relative;
+    h1 {
+      font-size: clamp(0.8rem, 6vw, 2rem);
+      text-align: center;
+      background: linear-gradient(to right, rgb(231, 222, 222), cyan, rgba(0, 195, 255, 0.753));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    div{
+      position: absolute;
+      top: 0;
+      border-radius: 50% ;
+      filter: blur(80px);
+      opacity: 0.5;
+      background: linear-gradient(to right, cyan, blue);
+    
+    }
+  }
+ 
+    .chat {
+      max-width: 1000px;
+      width: 100%;
+      border: 0.1px solid gray;
+      border-radius: 10px;
+      .loading {
+        min-height:  calc(100vh - 120px);
+        width: 100%;
+        padding: 20px;
+
+        .loading-items {
+          background: linear-gradient(270deg, blue, cyan);
+          background-size: 400% 400%;
+
+          -webkit-animation: AnimationName 1s ease infinite;
+          -moz-animation: AnimationName 1s ease infinite;
+          animation: AnimationName 1s ease infinite;
+          position: relative;
+          margin-top: 10px;
+          height: 14px;
+          width: 296px;
+          border-radius: 30px;
+        }
+      }
+      .response-result {
+        overflow-wrap: break-word;
+        font-weight: 300;
+        font-size: clamp(0.8rem, 1rem, 1rem);
+        min-height:  calc(100vh - 120px);
+        padding-inline: 10px;
+        padding-block: 30px;
+        line-height: 30px;
+       color: white;
+      }
+
+      .input-items {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        input {
+          padding-inline-start: 10px;
+          width: 98%;
+          padding-block: 10px;
+        }
+        button {
+          padding: 10px;
+        }
+        .loader {
+          width: 20px;
+          height: 20px;
+          border: 5px solid #fff;
+          border-bottom-color: transparent;
+          border-radius: 50%;
+          box-sizing: border-box;
+          animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+  
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
